@@ -18,5 +18,4 @@ bin
 bundle
 coverage
 *#
-.ruby-version
 vendor/ruby
