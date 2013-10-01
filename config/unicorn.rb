@@ -4,6 +4,11 @@ worker_processes 3 # amount of unicorn workers to spin up
 timeout 30         # restarts workers that hang for 30 seconds
 preload_app true
 
+root_app_path = File.expand_path('../../../', __FILE__)
+shared_path = "#{root_app_path}/shared"
+
+pid "#{shared_path}/pids/unicorn.pid"
+
 # Taken from github: https://github.com/blog/517-unicorn
 # Though everyone uses pretty miuch the same code
 before_fork do |server, worker|
